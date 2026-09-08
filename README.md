@@ -1,4 +1,4 @@
-# Inventory Management Dashboard
+# Pharmaceutical Inventory & Supply Risk Intelligence
 ### From service gaps to replenishment decisions
 
 **[View interactive dashboard in Power BI](https://app.powerbi.com/groups/943b04fa-a797-4393-9714-4b50535e1d78/reports/b8cffddc-a52c-4ea8-bc2c-a54ef729bb05/5b020d87de3741fdbfa9?experience=power-bi)**
