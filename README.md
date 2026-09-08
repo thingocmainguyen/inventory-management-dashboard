@@ -46,6 +46,8 @@ Together, these records let me connect what customers requested with what was av
 
 **All business data is simulated.** The findings illustrate my analysis of this case, not the performance of a real company. All dollar amounts are Canadian dollars, and performance targets are assumptions set for the project.
 
+**Inventory snapshots:** September 2, 2024–August 10, 2026. **Order dates:** September 2, 2024–August 14, 2026. Some receipt and event tables include pre-window history. The screenshot’s “Data as of” label refers to the latest inventory snapshot; it is not the maximum date in every table.
+
 ## Tools
 
 **Microsoft Power BI** was used to prepare the information, build the dashboard, compare performance, and explore replenishment scenarios.
@@ -318,6 +320,26 @@ The dashboard supports five priorities:
 | **Use scenarios before committing cash** | Challenge delivery assumptions and critical-product needs before approving the proposed order queue. | Make purchasing trade-offs visible to managers and planners. |
 
 Success would be assessed through more complete and timely orders, fewer persistent low-cover products, and lower excess and expiry exposure. Those are intended outcomes to track—not improvements already delivered by this simulated project.
+
+## Technical approach
+
+**Power BI Desktop · Power Query (M) · DAX · PBIP/TMDL · Git**
+
+- **Data preparation:** Folder-based ingestion of monthly inventory and order extracts; explicit data types, readable field names, and supplier attributes joined into the product table.
+- **Modeling:** 17 tables and 28 relationships, including inactive date and lot relationships. The date dimension and supporting parameter tables are included in the semantic model.
+- **Measures:** 256 explicit measures covering base calculations, KPIs, comparisons, formatting, tooltips, and scenarios.
+- **Inventory logic:** As-of stock measures sum across products and DCs, not across weeks. Flow measures such as shipments and expiry write-offs accumulate over time.
+- **Metric discipline:** Fill rates use ratios of totals. OTIF uses delivered lines. Supplier on-time delivery uses received PO lines with a documented five-day tolerance.
+- **Replenishment:** Scenario calculations evaluate each SKU–DC pair before summing order value, so surplus at one location cannot cancel a shortage at another.
+- **Report design:** Six navigation pages, one hidden product drill-through, two tooltip pages, contextual filters, and three what-if parameters.
+
+## Assumptions and limitations
+
+This is a weekly simulation with project-defined targets, simplified replenishment assumptions, and one primary lot per order line. Returns, credits, chargebacks, patient-level analysis, and production compliance workflows are outside scope.
+
+The scenario policy uses available-to-promise stock (ATP) plus open purchase orders, does not subtract backorders, and does not enforce minimum order quantities or case-pack rounding. Its cycle service-level input differs from observed fill rate and OTIF.
+
+This repository presents the dashboard, screenshots, and analytical findings. The dataset, DAX source, semantic model files, KPI dictionary, and dataset generator are not included, so the calculations cannot be independently reproduced from this repository alone.
 
 ## What this project demonstrates
 
