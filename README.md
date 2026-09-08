@@ -7,7 +7,7 @@
 
 **How can a business hold $101.5 million in inventory and still struggle to give customers what they ordered?**
 
-I built this dashboard to investigate that question for a simulated pharmaceutical distributor. It connects customer service, stock investment, expiry exposure, and supplier performance, then turns those findings into priorities for the inventory planner.
+This dashboard was built to investigate that question for a simulated pharmaceutical distributor. It connects customer service, stock investment, expiry exposure, and supplier performance, then turns those findings into priorities for the inventory planner.
 
 > **The management flow:** Overview signals where performance is off track → analytical pages investigate the problem → Replenishment identifies what the planner should review and order → Product Detail supports individual decisions.
 
@@ -19,11 +19,11 @@ For a pharmaceutical distributor, this creates a difficult balance. Too little a
 
 The business needs to answer three questions:
 
-- **Where are we falling short of customer expectations?**
+- **Where are customer expectations not being met?**
 - **Where is inventory investment creating exposure rather than supporting service?**
 - **What should the team act on first?**
 
-My aim was to give managers a clear view of the situation and planners a practical starting point for action.
+The dashboard was designed to give managers a clear view of the situation and planners a practical starting point for action.
 
 ## Dataset: a realistic business case
 
@@ -42,9 +42,9 @@ The dataset reflects the scale and variety of a distribution business:
 | **Product batches** | 27,605 lot receipts, with expiry dates and quality-release information |
 | **Supply and quality events** | 264 shortage reports and 259 temperature-related incidents |
 
-Together, these records let me connect what customers requested with what was available, how suppliers performed, and which products faced expiry or quality concerns.
+Together, these records were used to connect customer requests with stock availability, supplier performance, and product expiry or quality concerns.
 
-**All business data is simulated.** The findings illustrate my analysis of this case, not the performance of a real company. All dollar amounts are Canadian dollars, and performance targets are assumptions set for the project.
+**All business data is simulated.** The findings illustrate the analysis of this case, not the performance of a real company. All dollar amounts are Canadian dollars, and performance targets are assumptions set for the project.
 
 **Inventory snapshots:** September 2, 2024–August 10, 2026. **Order dates:** September 2, 2024–August 14, 2026. Some receipt and event tables include pre-window history. The screenshot’s “Data as of” label refers to the latest inventory snapshot; it is not the maximum date in every table.
 
@@ -52,11 +52,11 @@ Together, these records let me connect what customers requested with what was av
 
 **Microsoft Power BI** was used to prepare the information, build the dashboard, compare performance, and explore replenishment scenarios.
 
-The focus of this presentation is how I used the dashboard to understand the business and support decisions.
+The focus of this presentation is how the dashboard was used to understand the business and support decisions.
 
 ## Analysis approach
 
-I followed the questions a manager would naturally ask:
+The analysis was structured around the questions a manager would naturally ask:
 
 1. **Check the overall health.** Compare service, stock investment, expiry exposure, and supplier delivery against expectations.
 2. **Look beyond the headline.** Examine when performance changed, which customers were affected, and how orders failed.
@@ -64,7 +64,7 @@ I followed the questions a manager would naturally ask:
 4. **Investigate supply constraints.** Consider delivery reliability and dependence on individual suppliers.
 5. **Turn findings into action.** Test planning assumptions and identify products that need closer attention.
 
-At each stage, I distinguished what the data showed from what still needed investigation. A large number of problems at a large distribution centre, for example, does not automatically mean that centre performs worse.
+At each stage, observed findings were distinguished from issues requiring further investigation. A large number of problems at a large distribution centre, for example, does not automatically mean that centre performs worse.
 
 ## Main insights
 
@@ -77,11 +77,11 @@ These findings point toward targeted service investigation and stock rebalancing
 
 ## Dashboard walkthrough
 
-### 1. Overview — Are we on track, and what needs attention?
+### 1. Overview — Is performance on track, and what needs attention?
 
 ![Overview dashboard: service, inventory, expiry exposure and products requiring attention](screenshots/01-overview.png)
 
-**I started with the tension between stock investment and customer service.**
+**The tension between stock investment and customer service was examined first.**
 
 The headline cards show **92.2% unit fill against a 97% target**, despite **$101.5M in inventory**. Expiry exposure is **1.7% against a 1.5% ceiling**, and supplier on-time delivery is **80.9% against a 90% target**. Open unfulfilled demand is valued at approximately **$241K**, below its recent average.
 
@@ -93,7 +93,7 @@ Each small line gives a quick sense of direction. The comparison beneath the num
 
 **The large service chart: when did the problem develop, and how long did it last?**
 
-I compared the share of requested units shipped with the share of order lines filled completely, week by week.
+The share of requested units shipped was compared with the share of order lines filled completely, week by week.
 
 An order line is one product entry on a customer's order. If a customer requests **1,000 units of one product and receives 950**, the unit fill rate is **95%**, but that line is still incomplete. One measure shows how much demand was served; the other shows whether each product request was fully satisfied.
 
@@ -101,7 +101,7 @@ The weekly chart reveals what a headline average hides: the two measures separat
 
 **The inventory-health chart: where is stock below the level needed?**
 
-I compared the proportion of product–location combinations needing attention, rather than simply counting them. Approximately **27.1%** were below their replenishment threshold.
+The proportion of product–location combinations needing attention was compared across locations, rather than relying on counts alone. Approximately **27.1%** were below their replenishment threshold.
 
 This comparison changes the management discussion: a smaller location can need attention even when its absolute number of affected products looks modest.
 
@@ -119,11 +119,11 @@ For example, **Ozerinis in Mississauga had no available cover and had been below
 
 **Next question:** We can see the service gap. Who is affected, and are orders failing because they are late, incomplete, or never shipped?
 
-### 2. Service — Which customers are we letting down, and how?
+### 2. Service — Which customers are being underserved, and how?
 
 ![Service dashboard: customer priorities, delivery failures and service by product group](screenshots/02-service.png)
 
-**I separated the customer experience into completeness, timing, and availability.**
+**The customer experience was assessed through completeness, timing, and availability.**
 
 The cards show **94.4% of order lines filled completely** and **91.1% of delivered lines arriving on time and complete**. Around **13K order lines shipped no units**. Separately, the inventory indicator shows **1.9% of stocked product–location combinations had no available stock**.
 
@@ -131,7 +131,7 @@ This distinction matters: an order can be complete but late, partially supplied,
 
 **The customer chart: where should service recovery start?**
 
-I compared customer demand with the share of requested units supplied. The highlighted group contains **125 customers with above-median demand and below-median unit fill**, representing **47.9% of revenue**.
+Customer demand was compared with the share of requested units supplied. The highlighted group contains **125 customers with above-median demand and below-median unit fill**, representing **47.9% of revenue**.
 
 This provides a focused starting point for account reviews. It identifies substantial commercial exposure, while product and customer criticality still need to guide the final priorities.
 
@@ -143,21 +143,21 @@ Among delivered lines that failed the on-time-and-complete test:
 - **14.2% were on time but incomplete.**
 - **1.1% were both late and incomplete.**
 
-I would therefore investigate dispatch, transport, and delivery commitments alongside stock availability. The unshipped lines remain a separate service problem; they are not included in this delivered-order comparison.
+Dispatch, transport, and delivery commitments should therefore be investigated alongside stock availability. The unshipped lines remain a separate service problem; they are not included in this delivered-order comparison.
 
 **The service comparison by product group: where do shortfalls repeat?**
 
-I compared performance across customer priority tiers and product groups. **Vaccines and Respiratory products show weaker fill rates across all three tiers**. Vaccine fill ranges from approximately **76% to 80%**, while Respiratory ranges from **80% to 86%**.
+Performance was compared across customer priority tiers and product groups. **Vaccines and Respiratory products show weaker fill rates across all three tiers**. Vaccine fill ranges from approximately **76% to 80%**, while Respiratory ranges from **80% to 86%**.
 
 The recurring pattern suggests a product-group investigation is needed, rather than assuming the issue is confined to one customer priority level.
 
 **Next question:** If customers are still underserved, is the business holding too little inventory—or investing in the wrong mix?
 
-### 3. Inventory & Working Capital — Is our stock investment in the right place?
+### 3. Inventory & Working Capital — Is stock investment in the right place?
 
 ![Inventory dashboard: stock investment, excess, product segmentation and product-group exposure](screenshots/03-inventory.png)
 
-**I examined whether the stock held was supporting demand or tying up cash.**
+**Stock holdings were examined to determine whether they supported demand or tied up cash.**
 
 The business held **$101.5M in inventory**, including **$11.36M above its planned upper stocking levels**. Inventory represented approximately **42.6 days of activity against a 36-day target**, while **4.2% of product–location combinations were below their safety buffer**.
 
@@ -165,13 +165,13 @@ Excess stock and insufficient availability were present at the same time.
 
 **The value-concentration chart: how broad is the important product range?**
 
-I ranked products by the cost value of goods supplied and examined how quickly their combined share accumulated. **200 of 520 products accounted for 80% of consumption value.**
+Products were ranked by the cost value of goods supplied, and their cumulative share was examined. **200 of 520 products accounted for 80% of consumption value.**
 
 The business cannot focus on only a very small group and assume the rest is unimportant. It needs close attention to the highest-value products and a manageable policy for the broader range.
 
 **The product-segmentation chart: which products are expensive and difficult to predict?**
 
-I compared product value with demand consistency. The high-value, unpredictable group held **16.1% of inventory value**.
+Product value was compared with demand consistency. The high-value, unpredictable group held **16.1% of inventory value**.
 
 These products deserve more frequent review because purchasing too much can create substantial exposure, while purchasing too little can leave important orders incomplete. High-value products with steadier demand present a different planning challenge.
 
@@ -185,11 +185,11 @@ This supports a review of the product and location mix. It does not justify cutt
 
 **Next question:** Where does excess inventory also have a deadline—and what other quality issues could make stock unusable?
 
-### 4. Expiry & Quality — What value could we lose, and where can we intervene?
+### 4. Expiry & Quality — What value could be lost, and where is intervention needed?
 
 ![Expiry and Quality dashboard: expiry trends, temperature-related exposure and lot review priorities](screenshots/04-expiry-quality.png)
 
-**I separated stock at risk from stock already lost.**
+**Stock at risk was distinguished from stock already lost.**
 
 The cards show expiry write-offs equivalent to **0.73% of the cost of goods supplied**, approximately **$269K held in quarantine**, and **14 lots carrying simulated recall statuses**. The recent 13-week view also shows approximately **$2M rejected at quality assessment** and **$818K destroyed following temperature-related incidents**.
 
@@ -197,13 +197,13 @@ These are different management problems. Held stock may still be released; destr
 
 **The weekly expiry chart: is exposure occasional or persistent?**
 
-I compared the value approaching expiry with the project's 1.5% ceiling. Exposure exceeded that ceiling in **63 of 102 weeks**, reaching **3.74% at its peak**.
+The value approaching expiry was compared with the project's 1.5% ceiling. Exposure exceeded that ceiling in **63 of 102 weeks**, reaching **3.74% at its peak**.
 
 That suggests an ongoing stock-planning issue rather than an isolated bad week. Further examination showed refrigerated products carried approximately **93% of the latest expiry exposure**.
 
 **The temperature-incident chart: where is money being lost or awaiting a decision?**
 
-I compared recorded causes while separating destroyed value from stock still awaiting assessment. Carrier delay represented the largest combined exposure, at approximately **$2.07M**.
+Recorded causes were compared, with destroyed value separated from stock still awaiting assessment. Carrier delay represented the largest combined exposure, at approximately **$2.07M**.
 
 Across the full event history, approximately **$4.16M had been written off** and **$2.53M remained pending assessment**. The pending amount is not a recovery; it represents unresolved exposure.
 
@@ -211,17 +211,17 @@ The recent period added another warning: temperature incidents became less frequ
 
 **The lot table: what should the team review first?**
 
-I considered both value and time remaining. One visible lot had approximately **$1.97M in recorded receipt value with 76 days to expiry**; another had approximately **$515K with only seven days remaining**.
+Both value and time remaining were considered. One visible lot had approximately **$1.97M in recorded receipt value with 76 days to expiry**; another had approximately **$515K with only seven days remaining**.
 
 The largest value and the shortest deadline can lead to different priorities. Before arranging a transfer or another intervention, the planner must confirm how much of each lot is still on hand—the table's receipt quantities do not establish its current remaining balance.
 
 **Next question:** Alongside stock already held, what could disrupt future supply?
 
-### 5. Supply Risk — Where are we vulnerable to the next disruption?
+### 5. Supply Risk — Where is supply vulnerable to the next disruption?
 
 ![Supply Risk dashboard: supplier reliability, single-source exposure and active shortages](screenshots/05-supply-risk.png)
 
-**I separated current disruption from dependence that could become a future problem.**
+**Current disruption was distinguished from supplier dependence that could create future exposure.**
 
 The cards identify **12 products with active simulated shortages**, including three in the highest modeled severity tier. They also flag **68 medically necessary products dependent on a single supplier** and **six suppliers meeting the project's quality-risk screening criteria**.
 
@@ -229,7 +229,7 @@ Supplier on-time delivery was **80.9%**, using the project's five-day receiving 
 
 **The supplier chart: which reliability problems carry the greatest business exposure?**
 
-I compared delivery reliability and variation in lead time, then used purchasing spend to judge the scale of exposure.
+Delivery reliability and variation in lead time were compared, and purchasing spend was used to assess the scale of exposure.
 
 The supplier with the worst delivery result was not necessarily the first commercial priority. **Rampur Life Sciences** had approximately **$152.1M in purchasing spend**, compared with **$57.5M for Yangling Pharma Group**, despite both showing weak reliability.
 
@@ -237,7 +237,7 @@ This changes the conversation from “Who has the worst score?” to “Where wo
 
 **The shortage table: which products have fewer recovery options?**
 
-I reviewed active shortages alongside severity, single-source dependence, medical necessity, and recorded alternatives.
+Active shortages were reviewed alongside severity, single-source dependence, medical necessity, and recorded alternatives.
 
 A single-source flag identifies dependence, but does not automatically mean a product has no therapeutic alternative. Looking at these factors together produces a more useful review list than treating every shortage as equally urgent.
 
@@ -257,7 +257,7 @@ These indicators help distinguish workload, purchasing value, timing exposure, a
 
 **The scenario controls: how would the plan change?**
 
-I tested demand, delivery lead time, and the planning service assumption separately:
+Demand, delivery lead time, and the planning service assumption were tested separately:
 
 | Planning question | Change in proposed order value |
 |---|---:|
@@ -275,7 +275,7 @@ The table brings together the product, location, priority, available stock, sugg
 
 The queue is a proposed plan. Before placing orders, the planner should confirm current stock, outstanding demand, expected deliveries, and supplier ordering constraints. In this simulation, the final week contains no open-order quantities in the inventory view, so the displayed purchasing requirement should not be treated as evidence of a sudden real-world collapse in supply.
 
-**Next question:** Before acting on a specific item, can we see its full situation in one place?
+**Next question:** Before acting on a specific item, can its full situation be reviewed in one place?
 
 ### 7. Product Detail — What explains this individual product's position?
 
@@ -291,7 +291,7 @@ The stock is split between Mississauga and Oakville. Both locations appear below
 
 **The weekly demand-and-service chart: is the issue temporary or recurring?**
 
-I compared what customers requested with what was supplied. The visible gaps identify weeks to investigate, while the latest stock position helps determine whether the concern remains relevant to the next order.
+Customer requests were compared with the quantities supplied. The visible gaps identify weeks to investigate, while the latest stock position helps determine whether the concern remains relevant to the next order.
 
 **The lot table: what product history needs checking?**
 
@@ -343,9 +343,9 @@ This repository presents the dashboard, screenshots, and analytical findings. Th
 
 ## What this project demonstrates
 
-I can turn a broad inventory problem into a connected management story: identify the warning signs, investigate where and how performance breaks down, challenge initial explanations, and present practical decisions.
+This project demonstrates how a broad inventory problem can be translated into a connected management story: warning signs are identified, performance gaps are investigated, initial explanations are challenged, and practical decisions are presented.
 
-**The dashboard moves from “What is wrong?” to “Why should we investigate it?” to “What should we do next?”**
+**The dashboard moves from “What is wrong?” to “Why should it be investigated?” to “What should be done next?”**
 
 **Mai Nguyen** · [LinkedIn](https://www.linkedin.com/in/thi-ngoc-mai-nguyen/) · [GitHub](https://github.com/thingocmainguyen)
 
