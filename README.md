@@ -1,6 +1,10 @@
 # Inventory Management Dashboard
 ### From service gaps to replenishment decisions
 
+**[View interactive dashboard in Power BI](https://app.powerbi.com/groups/943b04fa-a797-4393-9714-4b50535e1d78/reports/b8cffddc-a52c-4ea8-bc2c-a54ef729bb05/5b020d87de3741fdbfa9?experience=power-bi)**
+
+*Power BI sign-in and permission to view the report may be required.*
+
 **How can a business hold $101.5 million in inventory and still struggle to give customers what they ordered?**
 
 I built this dashboard to investigate that question for a simulated pharmaceutical distributor. It connects customer service, stock investment, expiry exposure, and supplier performance, then turns those findings into priorities for the inventory planner.
