@@ -125,15 +125,15 @@ For example, **Ozerinis in Mississauga had no available cover and had been below
 
 **The customer experience was assessed through completeness, timing, and availability.**
 
-The cards show **94.4% of order lines filled completely** and **91.1% of delivered lines arriving on time and complete**. Around **13K order lines shipped no units**. Separately, the inventory indicator shows **1.9% of stocked product–location combinations had no available stock**.
+The cards show **94.4% of order lines filled completely** and **91.1% of delivered lines arriving on time and complete**. Around **13K order lines shipped no units**, while **1.9% of ordered lines were affected by a stockout**.
 
 This distinction matters: an order can be complete but late, partially supplied, or not supplied at all.
 
 **The customer chart: where should service recovery start?**
 
-Customer demand was compared with the share of requested units supplied. The highlighted group contains **125 customers with above-median demand and below-median unit fill**, representing **47.9% of revenue**.
+Customer demand was compared with the share of requested units supplied. Amber identifies high-volume customers performing below the median fill rate, while red isolates high-volume customers with fill below 85%.
 
-This provides a focused starting point for account reviews. It identifies substantial commercial exposure, while product and customer criticality still need to guide the final priorities.
+This creates a focused starting point for account reviews by separating broad underperformance from the most severe service gaps. Product and customer criticality should still guide the final priorities.
 
 **The delivery-failure chart: is the main issue timing or quantity?**
 
@@ -159,7 +159,7 @@ The recurring pattern suggests a product-group investigation is needed, rather t
 
 **Stock holdings were examined to determine whether they supported demand or tied up cash.**
 
-The business held **$101.5M in inventory**, including **$11.36M above its planned upper stocking levels**. Inventory represented approximately **42.6 days of activity against a 36-day target**, while **4.2% of product–location combinations were below their safety buffer**.
+The business held **$101.5M in inventory**, including **$11.36M above its planned upper stocking levels**. Inventory represented **42.6 days of activity against a 36-day target**, while **4.2% of product–location combinations were below their safety buffer**.
 
 Excess stock and insufficient availability were present at the same time.
 
@@ -303,7 +303,7 @@ No shortage is recorded for this product in the displayed view. That does not re
 
 **The temperature-event panel: what happened to this product?**
 
-The July 13 event records approximately **$333K in exposure with a destroyed outcome**, associated with ambient conditions at the dock. This connects the product-level review back to the wider quality finding.
+Two visible July events record approximately **$495K of destroyed product**: about **$333K** associated with ambient conditions at the dock and **$162K** associated with a carrier delay. This connects the product-level review back to the wider quality finding.
 
 **Decision supported:** Review this product's replenishment timing and handling controls together, rather than treating them as unrelated issues.
 
@@ -349,4 +349,4 @@ This project demonstrates how a broad inventory problem can be translated into a
 
 **Mai Nguyen** · [LinkedIn](https://www.linkedin.com/in/thi-ngoc-mai-nguyen/) · [GitHub](https://github.com/thingocmainguyen)
 
-*Reading note: stock figures refer to the August 10, 2026 snapshot; activity measures cover the selected reporting period, and some quality cards show the latest 13 weeks. Screenshots are captured views. In the Service screenshot, “Stockout Rate” describes product–location availability rather than order lines; “Below Safety Stock” on the Inventory page compares stock with its safety buffer, not its replenishment threshold.*
+*Reading note: stock figures refer to the August 10, 2026 snapshot; activity measures cover the selected reporting period, and some quality cards show the latest 13 weeks. Screenshots are captured views. “Below Safety Stock” on the Inventory page compares stock with its safety buffer, not its replenishment threshold.*
